@@ -88,8 +88,8 @@ export default function App() {
         
         <View style={styles.dashHeader}>
           <View>
-            <Text style={styles.greeting}>Dashboard</Text>
-            <Text style={styles.userName}>Welcome, Guido</Text>
+            <Text style={styles.greeting}> Good morning, </Text>
+            <Text style={styles.userName}>Guiga</Text>
           </View>
           
           {/* === AQUI ESTÁ: BOTÃO NO CANTO SUPERIOR DIREITO === */}
