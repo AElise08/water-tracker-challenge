@@ -1,32 +1,58 @@
-# 💧 Water Tracker - React Native Animation Challenge
+# Water Tracker - React Native Animation Challenge
 
-Este repositório contém uma animação fluida em React Native, focado no comportamento de um *Bottom Sheet / Number Slider* interativo.
+React Native animation challenge focused on a fluid bottom-sheet number slider and animated water-fill interaction. The goal was to reproduce a high-performance mobile interaction with smooth gestures and UI-thread animations.
 
-## 🎯 Objetivo
-Reproduzir a animação de "preenchimento" de líquido controlada por um slider contínuo, priorizando a fluidez e a performance na UI Thread (60fps), com alvo principal no ecossistema **iOS**.
+## Why this project matters
 
-## 🛠 Tecnologias Utilizadas
-* **React Native** (via **Expo**)
-* **React Native Reanimated (v3)**: Para animações baseadas em física (Springs) e atualizações assíncronas de UI.
-* **React Native Gesture Handler**: Para captura precisa do gesto de pan (arraste) sem bloqueio da thread JS.
+This project highlights mobile UI craft: gesture handling, animated values, spring physics, and performance-conscious React Native implementation.
 
-## 🧠 Decisões Técnicas Principais
+## Tech stack
 
-1. **Textos em 60FPS (AnimatedTextInput):**
-   Para evitar engasgos (stutters) durante a atualização rápida dos números (porcentagem e *oz*), utilizei o componente `TextInput` animado via `useAnimatedProps`. Isso garante que o React não re-renderize a árvore de componentes a cada pixel arrastado, mantendo a contagem fluida e nativa.
+- React Native
+- Expo
+- React Native Reanimated
+- React Native Gesture Handler
+- Expo Haptics
+- Expo Linear Gradient
+- React Native SVG
+- Lucide React Native
 
-2. **Física da Animação (Spring Physics):**
-   A altura do líquido não cresce de forma linear. Utilizei `withSpring` atrelado à interpolação do Slider para criar um efeito de inércia, dando a sensação de "peso" ao líquido quando o slider é movido rapidamente.
+## Features
 
-3. **Gesto Contínuo (Context Saving):**
-   O `Gesture.Pan()` foi configurado salvando o `context.value` no `onBegin`. Isso impede que a bolinha do slider "pule" caso o usuário solte o dedo e volte a arrastar a partir do meio da barra.
+- Interactive bottom-sheet / number slider.
+- Continuous pan gesture for changing hydration progress.
+- Animated water-fill behavior.
+- Smooth numeric updates during dragging.
+- Spring-based animation for a more physical liquid feel.
+- iOS-first Expo Go testing workflow.
 
-4. **Design Over-Delivery:**
-   Embora o foco fosse apenas a animação, aproveitei o poder do Reanimated para clonar a ideia do design original que usei como inspiração.
-   
-## 🚀 Como testar
-O projeto foi empacotado para rodar perfeitamente no **Expo Go**.
-1. Clone o repositório.
-2. Rode `npm install`.
-3. Rode `npx expo start`.
-4. Leia o QR Code com a câmera do iOS usando o app Expo Go.
+## Technical highlights
+
+- Used animated props for text updates to avoid unnecessary React re-renders during drag.
+- Used spring physics to make the water movement feel less linear and more tactile.
+- Preserved gesture context on drag start to prevent slider jumps.
+- Focused on UI-thread animation performance for a 60fps experience.
+
+## Getting started
+
+```bash
+git clone https://github.com/AElise08/water-tracker-challenge.git
+cd water-tracker-challenge
+npm install
+npx expo start
+```
+
+Scan the QR code with Expo Go on iOS.
+
+## Available scripts
+
+```bash
+npm start      # Start Expo
+npm run ios    # Open iOS target
+npm run android # Open Android target
+npm run web    # Open web target
+```
+
+## License
+
+0BSD
